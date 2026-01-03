@@ -2,12 +2,6 @@
 Developed a production-grade end-to-end Machine Learning system to predict customer attrition in the telecom sector. Unlike static research projects, this system implements a decoupled, API-first architecture, separating high-performance model inference from the user interface to ensure scalability and industrial reliability.
 The system is designed to handle real-world challenges such as highly skewed usage data, class imbalance, and the need for real-time inference using a "Hybrid Cloud" deployment strategy.
 
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![XGBoost](https://img.shields.io/badge/Model-XGBoost-23aaff?style=flat&logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/)
-[![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
-
 ---
 
 ## Live Deployment Links
@@ -35,17 +29,47 @@ The system follows a modular request-response lifecycle:
 
 ## Project Structure
 ```text
-├── app/                     # FastAPI Backend logic & Schemas
-├── frontend/                # Streamlit Dashboard UI
-├── src/                     # Modular MLOps components
-│   ├── components/          # Data Ingestion, Transformation, Trainer
-│   ├── pipeline/            # Train & Predict logic
-│   └── logger.py            # Custom logging system
-├── artifacts/               # Serialized models (.pkl) and test data
-├── notebooks/               # EDA and Feature Engineering research
-├── Dockerfile               # Containerization instructions
+churn-prediction-system-hybrid-cloud/
+├── .devcontainer/           # Standardized VS Code dev environments
+├── .github/                 # GitHub specific configurations
+│   └── workflows/           # CI/CD pipelines (e.g., main.yaml for testing)
+├── app/                     # BACKEND: FastAPI Service
+│   ├── __init__.py
+│   ├── main.py              # API entry point
+│   └── schemas.py           # Pydantic data models
+├── artifacts/               # PERSISTENCE: Serialized ML objects
+│   ├── model.pkl            # Trained XGBoost model
+│   ├── preprocessor.pkl     # Scaling/Transformation pipeline
+│   └── test.csv             # Reference profile for hybrid inputs
+├── frontend/                # FRONTEND: Streamlit Dashboard
+│   ├── __init__.py
+│   └── streamlit_app.py     # Dashboard entry point
+├── notebooks/               # RESEARCH: EDA and Experimentation
+│   └── exploration.ipynb    # Feature engineering & analysis
+├── src/                     # CORE LOGIC: Modular MLOps Code
+│   ├── __init__.py
+│   ├── components/          # Pipeline steps
+│   │   ├── __init__.py
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   └── model_trainer.py
+│   ├── pipeline/            # Training and Prediction scripts
+│   │   ├── __init__.py
+│   │   ├── predict_pipeline.py
+│   │   └── train_pipeline.py
+│   ├── logger.py            # Custom logging logic
+│   ├── exception.py         # Custom error handling
+│   └── utils.py             # Helper functions (save/load objects)
+├── tests/                   # QUALITY: Unit and integration tests
+│   ├── __init__.py
+│   └── test_api.py          # Testing FastAPI endpoints
+├── Dockerfile               # Production container config
+├── docker-compose.yml       # Local multi-container orchestration
+├── main.py                  # CLI entry point to trigger training
 ├── requirements.txt         # Project dependencies
-└── setup.py                 # Project packaging
+├── setup.py                 # Makes 'src' folder importable as a package
+├── LICENSE                  # Open source license
+└── README.md                # Project documentation
 ```
 
 ## Feature Engineering & Insights
