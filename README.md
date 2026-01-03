@@ -51,35 +51,31 @@ Normalization: Implemented QuantileTransformer to handle extreme skewness in usa
 
 Installation & Local Execution
 1. Clone the Repository
-Bash
-
+```
 git clone [https://github.com/YOUR_USERNAME/churn-prediction-system-hybrid-cloud.git](https://github.com/YOUR_USERNAME/churn-prediction-system-hybrid-cloud.git)
 cd churn-prediction-system-hybrid-cloud
+```
 2. Setup Environment
-Bash
-
+```
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
+```
 3. Run the System
 You need to open two terminals:
-
 Terminal 1 (Backend API):
-
-Bash
-
+```
 python -m uvicorn app.main:app --reload
+```
 Terminal 2 (Frontend UI):
-
-Bash
-
+```
 python -m streamlit run frontend/streamlit_app.py
+```
 Docker Deployment
 To run the entire system using Docker:
-
-Bash
-
+```
 docker-compose up --build
+```
 Executive Summary (Insights)
 Proactive Retention: The system identifies "silent churners" (usage decay) before they cancel, allowing for targeted loyalty offers.
 
@@ -89,4 +85,4 @@ Reliability: Automated Pydantic validation prevents malformed data from reaching
 
 Author
 Panchangni Dhangar
-
+* [LinkedIn](https://www.linkedin.com/in/panchangni-dhangar/)
