@@ -113,7 +113,7 @@ Handset Lifecycle Management: Predicts when customers are likely to leave for an
 ****Summary****
 This project demonstrates a complete MLOps lifecycle—from exploratory data analysis and modular pipeline development to containerization and hybrid-cloud deployment. By decoupling the inference engine from the user interface, the system achieves the flexibility required for modern enterprise applications.
 
-**Author**
+**Author:**
 Panchangni Dhangar
 * [LinkedIn](https://www.linkedin.com/in/panchangni-dhangar/)
 
