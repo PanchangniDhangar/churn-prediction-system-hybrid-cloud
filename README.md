@@ -12,7 +12,7 @@ The system is designed to handle real-world challenges such as highly skewed usa
 
 ## Live Deployment Links
 * **Interactive Dashboard:** [Paste your Streamlit Cloud URL here]
-* **API Documentation (Swagger UI):** [Paste your Render URL here]/docs
+* **API Documentation (Swagger UI):** (https://churn-prediction-system-hybrid-cloud.onrender.com/docs)
 
 ## System Architecture & Data Flow
 
