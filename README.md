@@ -11,8 +11,8 @@ The system is designed to handle real-world challenges such as highly skewed usa
 ---
 
 ## Live Deployment Links
-* **Interactive Dashboard:** [Paste your Streamlit Cloud URL here]
-* **API Documentation (Swagger UI):** (https://churn-prediction-system-hybrid-cloud.onrender.com/docs)
+* **Interactive Dashboard:** (https://churn-prediction-system-hybrid-cloud.streamlit.app/)
+* **FastAPI (Swagger UI):** (https://churn-prediction-system-hybrid-cloud.onrender.com/docs)
 
 ## System Architecture & Data Flow
 
@@ -33,7 +33,7 @@ The system follows a modular request-response lifecycle:
 
 ---
 
-##  Project Structure
+## Project Structure
 ```text
 ├── app/                     # FastAPI Backend logic & Schemas
 ├── frontend/                # Streamlit Dashboard UI
@@ -48,17 +48,17 @@ The system follows a modular request-response lifecycle:
 └── setup.py                 # Project packaging
 ```
 
-****Feature Engineering & Insights****
+## Feature Engineering & Insights
 The model utilizes 28 high-impact features derived from raw telecom usage data. Key behavioral signals include:
 Usage Decay: change_mou (Percentage drop in minutes) as a leading indicator of churn.
 Equipment Lifecycle: eqpdays (Age of device) correlating with upgrade-driven attrition.
 Bill Shock: ovrmou_Mean (Overage minutes) causing sudden customer dissatisfaction.
 Normalization: Implemented QuantileTransformer to handle extreme skewness in usage metrics.
 
-****Installation & Local Execution****
+##  Installation & Local Execution
 1. Clone the Repository
 ```
-git clone [https://github.com/YOUR_USERNAME/churn-prediction-system-hybrid-cloud.git](https://github.com/YOUR_USERNAME/churn-prediction-system-hybrid-cloud.git)
+git clone [https://github.com/YOUR_USERNAME/churn-prediction-system-hybrid-cloud.git](https://github.com/PanchangniDhangar/churn-prediction-system-hybrid-cloud.git)
 cd churn-prediction-system-hybrid-cloud
 ```
 2. Setup Environment
@@ -86,20 +86,20 @@ docker-compose up --build
 
 ### Clone and Environment Setup
 ```bash
-git clone [https://github.com/YOUR_USERNAME/churn-prediction-system-hybrid-cloud.git](https://github.com/YOUR_USERNAME/churn-prediction-system-hybrid-cloud.git)
+git clone [https://github.com/YOUR_USERNAME/churn-prediction-system-hybrid-cloud.git](https://github.com/PanchangniDhangar/churn-prediction-system-hybrid-cloud.git)
 cd churn-prediction-system-hybrid-cloud
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-****Testing & Quality Assurance****
+## Testing & Quality Assurance
 Unit Testing: Implemented via the tests/ directory to validate model loading and API endpoint connectivity.
 Data Validation: Utilized Pydantic models in app/schemas.py to prevent malformed data from reaching the inference pipeline.
 Logging: Integrated a centralized logging system (src/logger.py) to track API requests, model predictions, and system errors in real-time.
 Reproducibility: Used setup.py and requirements.txt to ensure environment consistency across different deployment platforms.
 
-****Model Performance & Impact****
+## Model Performance & Impact
 **Technical Metrics**
 Model: XGBoost Classifier.
 Key Indicators: Focused on ROC-AUC and Recall to ensure high detection rates of at-risk customers.
@@ -110,10 +110,10 @@ Revenue Protection: By identifying "silent churners" (those with declining usage
 Resource Optimization: Enables the marketing team to target only high-risk/high-value customers with retention offers, reducing campaign costs.
 Handset Lifecycle Management: Predicts when customers are likely to leave for an upgrade, allowing for proactive device upgrade offers.
 
-****Summary****
+## Summary
 This project demonstrates a complete MLOps lifecycle—from exploratory data analysis and modular pipeline development to containerization and hybrid-cloud deployment. By decoupling the inference engine from the user interface, the system achieves the flexibility required for modern enterprise applications.
 
-**Author:**
+## Author:
 Panchangni Dhangar
 * [LinkedIn](https://www.linkedin.com/in/panchangni-dhangar/)
 
